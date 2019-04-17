@@ -5,7 +5,7 @@ const squareCollabs = qtd => {
 	const squares = []
 
 	while(qtd--){
-		squares.push(<SquareCollab/>)
+		squares.push(<SquareCollab key={qtd}/>)
 	}
 	
 	return squares
