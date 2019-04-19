@@ -1,25 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
 import SquareCollab from '../SquareCollab';
 
 import './styles.css'
 
-const createSquares = () => {
-	const squares = Array(9).fill()/**/
-	return squares.map(() => <SquareCollab />)
-}
+class BoardCollab extends Component {
 
-const squareCollabs = qtd => {
-	const squares = []
-
-	while(qtd--){
-		squares.push(<SquareCollab key={qtd}/>)
+	createSquares = () => {
+		const squares = Array(9).fill()
+		return squares.map(
+			(square, index) => (
+				<SquareCollab
+					key={index}
+					onClick={this.props.onClick}
+				/>
+			)
+		)
 	}
-	
-	return squares
-}
 
-const BoardCollab = ({qtd}) => (
-	<article className="board-collab">{createSquares()}</article>
-)
+	render() {
+		return <article className="board-collab">{this.createSquares()}</article>
+	}
+}
 
 export default BoardCollab;
