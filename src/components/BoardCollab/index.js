@@ -3,6 +3,11 @@ import SquareCollab from '../SquareCollab';
 
 import './styles.css'
 
+const createSquares = () => {
+	const squares = Array(9).fill()/**/
+	return squares.map(() => <SquareCollab />)
+}
+
 const squareCollabs = qtd => {
 	const squares = []
 
@@ -14,7 +19,7 @@ const squareCollabs = qtd => {
 }
 
 const BoardCollab = ({qtd}) => (
-	<article className="board-collab">{squareCollabs(qtd)}</article>
+	<article className="board-collab">{createSquares()}</article>
 )
 
 export default BoardCollab;
