@@ -26,11 +26,4 @@ class SquareCollab extends Component {
 	}
 }
 
-//const SquareCollab = () => (
-//	<button
-//		onClick={handleClick}
-//		className="square-collab"
-//	>X</button>
-//)
-
 export default SquareCollab
