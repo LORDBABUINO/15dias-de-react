@@ -4,7 +4,7 @@ import './styles.css'
 
 class SquareCollab extends Component {
 
-	state = {content: 'X'}
+	state = {content: ''}
 
 	handleClick = () => {
 		this.setState(
