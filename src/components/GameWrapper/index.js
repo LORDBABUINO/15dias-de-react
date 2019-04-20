@@ -20,7 +20,7 @@ class GameWrapper extends Component {
 		squares[index] || (squares[index] = player)
 
 		this.setState({
-			player: this.state.squares[index] !== '' && player === 'X'? 'O': 'X',
+			player: this.state.squares[index]? player : player === 'X'? 'O': 'X',
 			squares
 		})
 	}
