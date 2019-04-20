@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import BoardCollab from '../BoardCollab';
 import NextPlayer from '../NextPlayer';
+import HistoryCollab from '../HistoryCollab';
 
 import './styles.css'
 
@@ -19,6 +20,7 @@ class GameWrapper extends Component {
 			<main className="game-wrapper">
 				<NextPlayer player={this.state.player} /> 
 				<BoardCollab onClick={this.handleClick} />
+				<HistoryCollab />
 			</main>
 		)
 	}
