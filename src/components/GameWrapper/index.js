@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
-import BoardCollab from '../BoardCollab';
-import NextPlayer from '../NextPlayer';
-import HistoryCollab from '../HistoryCollab';
+import BoardCollab from '../BoardCollab'
+import NextPlayer from '../NextPlayer'
+import HistoryCollab from '../HistoryCollab'
+import StartGame from '../StartGame'
 
 import './styles.css'
 
@@ -33,6 +34,7 @@ class GameWrapper extends Component {
 				<NextPlayer player={player} /> 
 				<BoardCollab squares={squares} onClick={this.handleClick} />
 				<HistoryCollab />
+				<StartGame />
 			</main>
 		)
 	}
