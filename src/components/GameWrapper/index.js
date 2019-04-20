@@ -7,19 +7,31 @@ import HistoryCollab from '../HistoryCollab';
 import './styles.css'
 
 class GameWrapper extends Component {
-	state = {player: '', level: 10}
 
-	handleClick = () => {
-		this.setState({player: this.state.player === 'X'? 'O': 'X'})
+	state = {
+		player: 'X',
+		squares: Array(9).fill('')
 	}
 
-	state = {player: 'X'}
+	handleClick = index => {
+		const {player} = this.state
+		const squares = Array.from(this.state.squares)
+		
+		squares[index] || (squares[index] = player)
+
+		this.setState({
+			player: this.state.squares[index] !== '' && player === 'X'? 'O': 'X',
+			squares
+		})
+	}
 
 	render() {
+		const {player, squares} = this.state
+
 		return (
 			<main className="game-wrapper">
-				<NextPlayer player={this.state.player} /> 
-				<BoardCollab onClick={this.handleClick} />
+				<NextPlayer player={player} /> 
+				<BoardCollab squares={squares} onClick={this.handleClick} />
 				<HistoryCollab />
 			</main>
 		)
